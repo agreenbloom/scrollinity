@@ -33,6 +33,8 @@ $(document).ready(function(){
     $(window).on('scroll.scrollinity', function(){
       if(loading_hidden() && near_bottom()) {
         if(page_num > 0) {
+          // Refresh the load_path in case it changed
+          load_path = $('*[data-scrollinity-path]').data('scrollinity-path');
           loading_pic.show();
           load_new_items();
         }
